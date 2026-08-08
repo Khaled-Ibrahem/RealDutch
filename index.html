@@ -15,12 +15,16 @@
   <link rel="icon" type="image/x-icon" href="assets/RealDutch-Logo.png">
   <style>
     :root {
-      --ink: #0a0a0a;
-      --paper: #f3f3f1;
-      --soft: #e7e7e4;
-      --line: #cfcfcb;
-      --muted: #686864;
-      --white: #fff;
+      --ink: #192248;
+      --paper: #d6f5ee;
+      --soft: #ddf8f2;
+      --line: #b4eee0;
+      --muted: #333f70;
+      --white: #ffffff;
+      --accent: #26a688;
+      --accent-soft: #b4eee0;
+      --navy: #192248;
+      --heading: #333f70;
       --radius: 24px;
       --max: 1180px;
     }
@@ -321,7 +325,7 @@
     }
 
     .card {
-      border: 1px solid var(--line);
+      border: 1px solid var(--ink);
       border-radius: var(--radius);
       padding: 30px;
       background: transparent;
@@ -364,7 +368,7 @@
     }
 
     .feature {
-      border: 1px solid var(--line);
+      border: 1px solid var(--ink);
       border-radius: var(--radius);
       padding: 30px;
       min-height: 220px
@@ -397,7 +401,7 @@
       border-radius: 18px;
       padding: 22px;
       min-height: 150px;
-      background: var(--paper)
+      background: var(--line)
     }
 
     .method-step strong {
@@ -412,7 +416,7 @@
     }
 
     .sessions {
-      border-top: 1px solid var(--line)
+      border-top: 1px solid var(--accent)
     }
 
     .session {
@@ -421,7 +425,7 @@
       gap: 25px;
       align-items: center;
       padding: 24px 0;
-      border-bottom: 1px solid var(--line)
+      border-bottom: 1px solid var(--accent)
     }
 
     .session-no {
@@ -504,6 +508,88 @@
     .detail strong {
       font-family: "Space Grotesk";
       font-size: 20px
+    }
+
+    .pricing-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px
+    }
+
+    .price-card {
+      border: 1px solid #3a3a38;
+      border-radius: 30px;
+      padding: 34px;
+      background: #111
+    }
+
+    .price-card.payg {
+      background: #fff;
+      color: #0a0a0a;
+      border-color: #fff
+    }
+
+    .price-card.payg p {
+      color: #686864
+    }
+
+    .price-card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      align-items: flex-start
+    }
+
+    .price-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #999;
+      font-weight: 700;
+      margin-bottom: 8px
+    }
+
+    .price-card.payg .price-label {
+      color: #686864
+    }
+
+    .price-card h3 {
+      font-size: 28px
+    }
+
+    .price-card .price {
+      font-family: "Space Grotesk";
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: .9;
+      letter-spacing: -.06em;
+      white-space: nowrap
+    }
+
+    .price-card .price small {
+      font: 600 12px "DM Sans";
+      letter-spacing: 0;
+      color: #999
+    }
+
+    .price-card.payg .price small {
+      color: #686864
+    }
+
+    .price-card .details {
+      margin: 30px 0
+    }
+
+    .price-card .detail strong {
+      font-size: 17px
+    }
+
+    .payg-copy {
+      margin: 30px 0;
+      min-height: 55px
+    }
+
+    .payg-copy strong {
+      color: #0a0a0a
     }
 
     .cta {
@@ -606,6 +692,10 @@
       }
 
       .program-box {
+        grid-template-columns: 1fr
+      }
+
+      .pricing-options {
         grid-template-columns: 1fr
       }
 
@@ -910,17 +1000,35 @@
           </div>
           <p>Small-group learning designed for optimal learning and real-world application.</p>
         </div>
-        <div class="program-box">
-          <div>
-            <div class="price">5,000 <small>EGP</small></div>
+        <div class="pricing-options">
+          <article class="price-card">
+            <div class="price-card-top">
+              <div>
+                <div class="price-label">Full A1 Program</div>
+                <h3>10 Sessions</h3>
+              </div>
+              <div class="price">5,000 <small>EGP</small></div>
+            </div>
             <div class="details">
-              <div class="detail"><span>Program</span><strong>A1</strong></div>
-              <div class="detail"><span>Sessions</span><strong>10</strong></div>
               <div class="detail"><span>Schedule</span><strong>2 / week</strong></div>
               <div class="detail"><span>Group size</span><strong>4–5 people</strong></div>
+              <div class="detail"><span>Includes</span><strong>Full A1 journey</strong></div>
             </div>
-          </div>
-          <a class="btn light" href="#contact">Reserve Your Place →</a>
+            <a class="btn light" href="#contact">Join Full Program →</a>
+          </article>
+
+          <article class="price-card payg">
+            <div class="price-card-top">
+              <div>
+                <div class="price-label">Pay As You Go</div>
+                <h3>One Step at a Time</h3>
+              </div>
+              <div class="price">500 <small>EGP / step</small></div>
+            </div>
+            <p class="payg-copy">Prefer more flexibility? Pay <strong>500 EGP per step</strong> and progress through the
+              A1 program at your own pace.</p>
+            <a class="btn dark" href="#contact">Choose Pay As You Go →</a>
+          </article>
         </div>
       </div>
     </section>
