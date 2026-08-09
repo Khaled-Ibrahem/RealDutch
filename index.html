@@ -333,7 +333,7 @@
 
     .problem .card {
       border-color: #383836;
-      background: #111
+      background: var(--navy)
     }
 
     .card-number {
@@ -467,7 +467,7 @@
     }
 
     .program-box {
-      border: 1px solid #3a3a38;
+      border: 1px solid var(--line);
       border-radius: 30px;
       padding: 42px;
       display: grid;
@@ -486,7 +486,7 @@
     .price small {
       font: 600 14px "DM Sans";
       letter-spacing: 0;
-      color: #aaa
+      color: var(--muted)
     }
 
     .details {
@@ -501,7 +501,7 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: .12em;
-      color: #999;
+      color: var(--muted);
       margin-bottom: 6px
     }
 
@@ -509,6 +509,23 @@
       font-family: "Space Grotesk";
       font-size: 20px
     }
+
+    .offer-badge {
+      display:inline-flex; align-items:center; gap:8px; margin-bottom:24px;
+      padding:8px 12px; border-radius:999px; background:var(--accent); color:#fff;
+      font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase
+    }
+    .dark-badge { background:var(--navy); color:#fff }
+    .price-wrap { text-align:right }
+    .old-price { text-decoration:line-through; opacity:.55; font-size:14px; font-weight:700; margin-bottom:5px }
+    .offer-note { margin:18px 0 0; font-size:14px; color:var(--accent-soft) }
+    .payg-deals { display:grid; gap:10px; margin:25px 0 }
+    .deal { border:1px solid var(--line); border-radius:16px; padding:15px 17px; display:grid; grid-template-columns:1fr auto; gap:4px 15px; align-items:center }
+    .deal strong { font-family:"Space Grotesk"; font-size:16px }
+    .deal span { font-weight:800; text-align:right }
+    .deal small { grid-column:1/-1; color:var(--muted); font-size:12px }
+    .featured-deal { border:2px solid var(--accent); background:var(--soft) }
+    .payg .payg-copy { margin:18px 0 25px }
 
     .pricing-options {
       display: grid;
@@ -524,13 +541,13 @@
     }
 
     .price-card.payg {
-      background: #fff;
-      color: #0a0a0a;
-      border-color: #fff
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white)
     }
 
     .price-card.payg p {
-      color: #686864
+      color: var(--muted)
     }
 
     .price-card-top {
@@ -544,13 +561,13 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: .12em;
-      color: #999;
+      color: var(--muted);
       font-weight: 700;
       margin-bottom: 8px
     }
 
     .price-card.payg .price-label {
-      color: #686864
+      color: var(--muted)
     }
 
     .price-card h3 {
@@ -568,11 +585,11 @@
     .price-card .price small {
       font: 600 12px "DM Sans";
       letter-spacing: 0;
-      color: #999
+      color: var(--muted)
     }
 
     .price-card.payg .price small {
-      color: #686864
+      color: var(--muted)
     }
 
     .price-card .details {
@@ -1002,13 +1019,15 @@
         </div>
         <div class="pricing-options">
           <article class="price-card">
+            <div class="offer-badge">20 DAYS ONLY · 20% OFF</div>
             <div class="price-card-top">
               <div>
                 <div class="price-label">Full A1 Program</div>
                 <h3>10 Sessions</h3>
               </div>
-              <div class="price">5,000 <small>EGP</small></div>
+              <div class="price-wrap"><div class="old-price">6,000 EGP</div><div class="price">4,800 <small>EGP</small></div></div>
             </div>
+            <p class="offer-note">Save 1,200 EGP when you enroll in the full A1 course during the offer period.</p>
             <div class="details">
               <div class="detail"><span>Schedule</span><strong>2 / week</strong></div>
               <div class="detail"><span>Group size</span><strong>4–5 people</strong></div>
@@ -1018,19 +1037,22 @@
           </article>
 
           <article class="price-card payg">
+            <div class="offer-badge dark-badge">PAY AS YOU GO</div>
             <div class="price-card-top">
               <div>
-                <div class="price-label">Pay As You Go</div>
+                <div class="price-label">Flexible Payment</div>
                 <h3>One Step at a Time</h3>
               </div>
-              <div class="price">500 <small>EGP / step</small></div>
+              <div class="price-wrap"><div class="old-price">600 EGP / step</div><div class="price">240 <small>EGP / step</small></div></div>
             </div>
-            <p class="payg-copy">Prefer more flexibility? Pay <strong>500 EGP per step</strong> and progress through the
-              A1 program at your own pace.</p>
+            <div class="payg-deals">
+              <div class="deal featured-deal"><strong>1 step</strong><span>60% OFF · 240 EGP</span><small>Offer valid for 20 days only</small></div>
+              <div class="deal"><strong>2 steps together</strong><span>75% OFF · 300 EGP total</span><small>150 EGP per step · Offer valid for 10 days only</small></div>
+            </div>
+            <p class="payg-copy">Choose the pace that works for you and continue through the A1 program step by step.</p>
             <a class="btn dark" href="#contact">Choose Pay As You Go →</a>
           </article>
         </div>
-      </div>
     </section>
 
     <section id="contact" class="cta">
